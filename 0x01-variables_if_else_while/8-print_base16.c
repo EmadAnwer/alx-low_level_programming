@@ -19,7 +19,7 @@ int main(void)
 	while (letter != ('f' + 1))
 	{
 		putchar(letter++);
-		if (letter == '9')
+		if (letter == ('9' + 1))
 			letter = 'a';
 	}
 	putchar('\n');
