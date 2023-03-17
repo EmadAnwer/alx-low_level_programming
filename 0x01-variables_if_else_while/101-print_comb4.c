@@ -17,7 +17,6 @@
 int main(void)
 {
 	int digit1, digit2, digit3;
-	bool b;
 
 	for (digit1 = '0'; digit1 != ('7' + 1); digit1++)
 	{
