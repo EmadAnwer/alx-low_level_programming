@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
- * Task 2 in 0x01. C - Variables, if, else, while project
+ * Task 3 in 0x01. C - Variables, if, else, while project
  * Purpose : prints the alphabet in lowercase, followed by a new line.
  * my sulotion: get letter using ascii
  *		lowercase start from 97 to 122 then from 65 to 90
