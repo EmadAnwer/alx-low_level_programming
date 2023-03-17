@@ -15,12 +15,12 @@
 
 int main(void)
 {
-	int d2,d1;
+	int d2, d1;
 	int i = 0;
 
 	for (d1 = '0'; d1 != ('8' + 1); d1++)
 	{
-		for (d2 = '1'+i; d2 != ('9' + 1); d2++)
+		for (d2 = '1' + i; d2 != ('9' + 1); d2++)
 		{
 		putchar(d1);
 		putchar(d2);
