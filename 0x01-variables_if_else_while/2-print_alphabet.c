@@ -18,10 +18,9 @@ int main(void)
 	char letter = 97;
 	/*letter != 123 "reapt untile letter == 122" in ascii 122 == 'z'   */
 	while (letter != 123)
-	{
 		putchar(letter++);
-		putchar('\n');
-	}
+
+	putchar('\n');
 
 	return (0);
 }
