@@ -8,9 +8,10 @@
  * my sulotion: using Relational Operators  '< > ==' to check
  */
 
-/*
- * main function is the entry point for this porgram
- * Return value is (0)
+/**
+ * main - function is the Entry Point for this porgram
+ * checking if 'n' is positive or nigative or 0
+ * Return: value is (0)
  */
 int main(void)
 {
