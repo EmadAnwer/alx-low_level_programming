@@ -33,5 +33,4 @@ void jack_bauer(void)
 	hours++;
 
 	}
-	return (void);
 }
