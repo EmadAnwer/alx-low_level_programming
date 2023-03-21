@@ -11,7 +11,7 @@
 
 
 /**
- * print_alphabet - prints the alphabet, in lowercase, followed by a new line.
+ * print_alphabet_x10 - prints alphabet followed by a new line.10x
  * using _putchar function again
  *
  * Return: (void)
