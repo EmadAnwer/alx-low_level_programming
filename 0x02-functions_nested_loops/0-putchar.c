@@ -1,4 +1,4 @@
-#include "_putchar.c"
+#include "main.h"
 /*
  * Task 1 in 0x02. C - Functions, nested loops
  * Purpose : including our own header files
