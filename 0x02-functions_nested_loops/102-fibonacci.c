@@ -12,20 +12,22 @@
 
 int main(void)
 {
-	unsigned long long int n1, n2, fib;
+	double n1, n2, fib;
+
+	char i, max;
 
 	fib = 0;
 	n1 = 0;
 	n2 = 1;
-	char i = 2;
-	char max = 50;
+	i = 2;
+	max = 50;
 
 	while (i <= max + 1)
 	{
 		fib = n2 + n1;
 		n1 = n2;
 		n2 = fib;
-		printf("%llu", fib);
+		printf("%.0lf", fib);
 		if (i != max + 1)
 			printf(", ");
 		else
