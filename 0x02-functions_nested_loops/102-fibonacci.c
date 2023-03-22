@@ -1,6 +1,6 @@
 #include <stdio.h>
 /*
-* Task 15 in 0x02. C - Functions, nested loops
+* Task 14 in 0x02. C - Functions, nested loops
 * Purpose : print first 50 Fibonacci numbers
 */
 

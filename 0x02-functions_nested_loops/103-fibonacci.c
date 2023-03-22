@@ -1,27 +1,38 @@
-#include "main.h"
 #include <stdio.h>
 /*
-* Task 12 in 0x02. C - Functions, nested loops
-* Purpose : prints the sum of all the multiples of 3 or 5 below 1024
+* Task 16 in 0x02. C - Functions, nested loops
+* Purpose : prints the sum of the even-valued < 4,000,000
 */
 
 /**
  * main - function is the Entry Point for this porgram
- * prints prints the sum of all the multiples of 3 or 5 below 1024
+ * prints prints the sum of the even-valued < 4,000,000
  * Return: value is (0)
  */
 
 int main(void)
 {
-	int n = 1024, sum = 0;
+	int n1, n2, fib, sum;
 
-	n--;
-	while (n != 0)
+	char i;
+
+	fib = 0;
+	n1 = 0;
+	n2 = 1;
+	i = 2;
+	sum = 0;
+
+	while (fib < 4000000)
 	{
-		if (n % 3 == 0 || n % 5 == 0)
-			sum = sum + n;
-		n--;
+		fib = n2 + n1;
+		n1 = n2;
+		n2 = fib;
+
+		if (fib % 2 == 0)
+			sum = sum + fib;
+		i++;
 	}
 	printf("%d\n", sum);
 	return (0);
+
 }
