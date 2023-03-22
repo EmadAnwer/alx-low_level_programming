@@ -14,13 +14,14 @@
 int main(void)
 {
 	int n = 1024, sum = 0;
+
 	n--;
 	while (n != 0)
 	{
-		if (n%3 == 0 || n%5 == 0)
+		if (n % 3 == 0 || n % 5 == 0)
 			sum = sum + n;
 		n--;
 	}
-	printf("%d\n",sum);
+	printf("%d\n", sum);
 	return (0);
 }
