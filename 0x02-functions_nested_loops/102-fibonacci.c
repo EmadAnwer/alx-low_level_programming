@@ -1,27 +1,40 @@
-#include "main.h"
 #include <stdio.h>
 /*
-* Task 12 in 0x02. C - Functions, nested loops
-* Purpose : prints the sum of all the multiples of 3 or 5 below 1024
+* Task 15 in 0x02. C - Functions, nested loops
+* Purpose : print first 50 Fibonacci numbers
 */
 
 /**
  * main - function is the Entry Point for this porgram
- * prints prints the sum of all the multiples of 3 or 5 below 1024
+ * prints first 50 Fibonacci numbers
  * Return: value is (0)
  */
 
 int main(void)
 {
-	int n = 1024, sum = 0;
+	unsigned long long int n1, n2, fib;
 
-	n--;
-	while (n != 0)
+	fib = 0;
+	n1 = 0;
+	n2 = 1;
+	char i = 2;
+	char max = 50;
+
+	while (i <= max + 1)
 	{
-		if (n % 3 == 0 || n % 5 == 0)
-			sum = sum + n;
-		n--;
+		fib = n2 + n1;
+		n1 = n2;
+		n2 = fib;
+		printf("%llu", fib);
+		if (i != max + 1)
+			printf(", ");
+		else
+			putchar('\n');
+
+		i++;
 	}
-	printf("%d\n", sum);
+
 	return (0);
+
 }
+
