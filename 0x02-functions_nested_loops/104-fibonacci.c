@@ -27,7 +27,7 @@ int main(void)
 		fib = n2 + n1;
 		n1 = n2;
 		n2 = fib;
-		printf("%Lf", fib);
+		printf("%.Lf", fib);
 		if (i != max + 1)
 			printf(", ");
 		else
