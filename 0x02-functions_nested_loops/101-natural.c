@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /*
 * Task 12 in 0x02. C - Functions, nested loops
 * Purpose : prints the sum of all the multiples of 3 or 5 below 1024
