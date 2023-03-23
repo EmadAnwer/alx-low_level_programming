@@ -1,7 +1,7 @@
 #include "main.h"
 /*
  * Task 0 in 0x04. C - More functions, more nested loops
- * Purpose : checks for uppercase character
+ * Purpose : checks for uppercase character.
  */
 
 
