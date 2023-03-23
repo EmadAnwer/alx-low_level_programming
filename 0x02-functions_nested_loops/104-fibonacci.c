@@ -1,59 +1,51 @@
 #include <stdio.h>
 /*
-* Task 16 in 0x02. C - Functions, nested loops
+* Task 14 in 0x02. C - Functions, nested loops
 * Purpose : print first 50 Fibonacci numbers
 */
 
 /**
-* main - function is the Entry Point for this porgram
-* prints first 50 Fibonacci numbers
-* Return: value is (0)
-*/
+ * main - function is the Entry Point for this porgram
+ * prints first 50 Fibonacci numbers
+ * Return: value is (0)
+ */
 
 int main(void)
 {
-long double fib, n1, n2;
+	unsigned long int current_fibonacci, previous_fibonacci, next_fibonacci;
 
-char i, max;
+	unsigned long int previous_fibonacci_1, previous_fibonacci_2
 
-fib = 3;
-n1 = 0;
-n2 = 1;
-i = 2;
-max = 98;
+	unsigned long int next_fibonacci_1, next_fibonacci_2;
 
-while (i <= max + 1)
-{
-	fib = n2 + n1;
-	n1 = n2;
-	n2 = fib;
-	if(i == 94)
+	previous_fibonacci = 1;
+	next_fibonacci = 2;
+
+	printf("%lu", previous_fibonacci);
+
+	for (current_fibonacci = 1; current_fibonacci < 91; current_fibonacci++)
 	{
-		printf("19740274219");
-		printf("868223167");
+		printf(", %lu", next_fibonacci);
+		next_fibonacci = next_fibonacci + previous_fibonacci;
+		previous_fibonacci = next_fibonacci - previous_fibonacci;
 	}
-		
-	else if (i == 95)
-		printf("31940434634990099905");
-	else if (i == 97)
-		printf("83621143489848422977");
-	else if (i == 98)
-		printf("135301852344706746049");
-	else if (i == 99)
-		printf("218922995834555169026");
-	else
-		printf("%.Lf", fib);
-	
-	
-		
-	if (i != max + 1)
-		printf(", ");
-	else
-		putchar('\n');
+	previous_fibonacci_1 = previous_fibonacci / 1000000000;
+	previous_fibonacci_2 = previous_fibonacci % 1000000000;
+	next_fibonacci_1 = next_fibonacci / 1000000000;
+	next_fibonacci_2 = next_fibonacci % 1000000000;
 
-	i++;
+	for (current_fibonacci = 92; current_fibonacci < 99; ++current_fibonacci)
+	{
+		printf(", %lu", next_fibonacci_1 + (next_fibonacci_2 / 1000000000));
+		printf("%lu", next_fibonacci_2 % 1000000000);
+		next_fibonacci_1 = next_fibonacci_1 + previous_fibonacci_1;
+		previous_fibonacci_1 = next_fibonacci_1 - previous_fibonacci_1;
+		next_fibonacci_2 = next_fibonacci_2 + previous_fibonacci_2;
+		previous_fibonacci_2 = next_fibonacci_2 - previous_fibonacci_2;
+	}
+
+	printf("\n");
+
+	return (0);
 }
 
-return (0);
-
-}
