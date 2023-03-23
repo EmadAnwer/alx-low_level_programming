@@ -1,6 +1,6 @@
 #include "main.h"
 /*
- * Task 2 in 0x04. C - More functions, more nested loops
+ * Task 3 in 0x04. C - More functions, more nested loops
  * Purpose : multiplies two integers.
  */
 
