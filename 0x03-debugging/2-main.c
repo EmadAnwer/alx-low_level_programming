@@ -18,6 +18,21 @@ int main(void)
         largest = largest_number(a, b, c);
 
         printf("%d is the largest number\n", largest);
+	a = 0;
+        b = 972;
+        c = -98;
 
+        largest = largest_number(a, b, c);
+
+        printf("%d is the largest number\n", largest);
+
+
+	a = -98;
+        b = 0;
+        c = 972;
+
+        largest = largest_number(a, b, c);
+
+        printf("%d is the largest number\n", largest);
         return (0);
 }
