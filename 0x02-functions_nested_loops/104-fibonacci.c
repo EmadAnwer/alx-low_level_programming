@@ -14,7 +14,7 @@ int main(void)
 {
 	unsigned long int current_fibonacci, previous_fibonacci, next_fibonacci;
 
-	unsigned long int previous_fibonacci_1, previous_fibonacci_2
+	unsigned long int previous_fibonacci_1, previous_fibonacci_2;
 
 	unsigned long int next_fibonacci_1, next_fibonacci_2;
 
