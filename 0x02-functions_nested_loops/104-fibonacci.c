@@ -28,8 +28,11 @@ while (i <= max + 1)
 	n1 = n2;
 	n2 = fib;
 	if(i == 94)
+	{
 		printf("19740274219");
 		printf("868223167");
+	}
+		
 	else if (i == 95)
 		printf("31940434634990099905");
 	else if (i == 97)
