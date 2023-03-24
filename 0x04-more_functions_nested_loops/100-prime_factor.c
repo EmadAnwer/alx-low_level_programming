@@ -15,24 +15,18 @@
 
 int main(void)
 {
-	int d2, d1;
-	int i = 0;
-
-	for (d1 = '0'; d1 != ('8' + 1); d1++)
+	long n,p;
+	
+	n = 612852475143;
+	p = 2;
+	while (n >= p * p)
 	{
-		for (d2 = '1' + i; d2 != ('9' + 1); d2++)
+		if(n % p == 0)
 		{
-		putchar(d1);
-		putchar(d2);
-		if (!((d1 == '8') && (d2 == '9')))
-			{
-			putchar(',');
-			putchar(' ');
-			}
-
+			n = n/p;
 		}
-	i++;
+		p++;
 	}
-	putchar('\n');
+	printf("%lu\n", n);
 	return (0);
 }
