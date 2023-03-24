@@ -2,8 +2,8 @@
 
 /*
  * Task 11 in  0x04. C - More functions, more nested loops
- * Purpose : prints the largest prime factor of the number 
- *	     n = 612852475143 
+ * Purpose : prints the largest prime factor of the number
+ *	     n = 612852475143
  */
 
 /**
