@@ -6,21 +6,21 @@
 
 
 /**
- * print_triangle - prints a triangle, followed by a new line.
+ * print_number - prints a triangle, followed by a new line.
  * using _putchar function
  * @size: int number
  * Return: (void)
  */
 
-void print_triangle(int size)
+void print_number(int n)
 {
 	int i, j, k;
 
 	if (size > 0)
 	{
-		for (i = 1; i <= size; i++)
+		for (i = 1; i <= n; i++)
 		{
-			for (k = 1; k <= size - i; k++)
+			for (k = 1; k <= n - i; k++)
 			{
 				_putchar(' ');
 			}
