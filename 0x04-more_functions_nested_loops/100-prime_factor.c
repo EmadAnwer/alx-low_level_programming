@@ -15,15 +15,15 @@
 
 int main(void)
 {
-	long n,p;
-	
+	long n, p;
+
 	n = 612852475143;
 	p = 2;
 	while (n >= p * p)
 	{
-		if(n % p == 0)
+		if (n % p == 0)
 		{
-			n = n/p;
+			n = n / p;
 		}
 		p++;
 	}
