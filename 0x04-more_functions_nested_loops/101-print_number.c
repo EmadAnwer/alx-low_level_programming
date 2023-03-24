@@ -1,37 +1,47 @@
 #include "main.h"
 /*
- * Task 10 in 0x04. C - More functions, more nested loops
- * Purpose : prints a triangle, followed by a new line.
+ * Task 12 in 0x04. C - More functions, more nested loops
+ * Purpose : prints an integer.
  */
 
 
 /**
- * print_number - prints a triangle, followed by a new line.
- * using _putchar function
- * @size: int number
- * Return: (void)
+ * print_number - prints an integer.
+ * @n: int number
  */
 
 void print_number(int n)
 {
-	int i, j, k;
+	int isNegative = 1;
+	int max = 1;
+	int i = 1;
 
-	if (size > 0)
+	if (n < 0)
 	{
-		for (i = 1; i <= n; i++)
+		isNegative = -1;
+		n = n * -1;
+	}
+	if (n == 0)
+	{
+	_putchar('0');
+	}
+	else
+	{
+	while (n / max != 0)
+	{
+		max = max * 10;
+	}
+		max = max / 10;
+
+		if (isNegative == -1)
+			_putchar('-');
+		while (max != 0)
 		{
-			for (k = 1; k <= n - i; k++)
-			{
-				_putchar(' ');
-			}
-			for (j = 1; j <= i; j++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
+		i = i * 10;
+		_putchar('0' + ((n / max) % i) % 10);
+		max = max / 10;
 
 		}
 	}
-	else
-		_putchar('\n');
+
 }
