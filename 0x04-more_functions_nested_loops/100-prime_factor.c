@@ -1,15 +1,14 @@
 #include <stdio.h>
 
 /*
- * Task 10 in 0x01. C - Variables, if, else, while project
- * Purpose : prints all possible different combinations of two digits.
- * my sulotion: nested loops
+ * Task 11 in  0x04. C - More functions, more nested loops
+ * Purpose : prints the largest prime factor of the number 
+ *	     n = 612852475143 
  */
 
 /**
  * main - function is the Entry Point for this program
- * prints prints all possible combinations of single-digit numbers.
- * 01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 14, 15...etc
+ * prints the largest prime factor 612852475143
  * Return: value is (0)
  */
 
