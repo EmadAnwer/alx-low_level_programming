@@ -12,36 +12,21 @@
 
 void print_number(int n)
 {
-	int isNegative = 1;
-	int max = 1;
-	int i = 1;
+	unsigned int n1;
 
 	if (n < 0)
 	{
-		isNegative = -1;
-		n = n * -1;
-	}
-	if (n == 0)
+		n1 = -n;
+		_putchar('-');
+	} else
 	{
-		_putchar('0');
-	}
-	else
-	{
-	while (n / max != 0)
-	{
-		max = max * 10;
-	}
-		max = max / 10;
-
-		if (isNegative == -1)
-			_putchar('-');
-		while (max != 0)
-		{
-		i = i * 10;
-		_putchar('0' + ((n / max) % i) % 10);
-		max = max / 10;
-
-		}
+		n1 = n;
 	}
 
+	if (n1 / 10)
+	{
+		print_number(n1 / 10);
+	}
+
+	_putchar((n1 % 10) + '0');
 }
