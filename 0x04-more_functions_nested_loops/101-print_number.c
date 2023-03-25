@@ -21,6 +21,12 @@ void print_number(int n)
 		isNegative = -1;
 		n = n * -1;
 	}
+	if (n == 0)
+	{
+		_putchar('0');
+	}
+	else
+	{
 	while (n / max != 0)
 	{
 		max = max * 10;
@@ -36,5 +42,6 @@ void print_number(int n)
 		max = max / 10;
 
 		}
+	}
 
 }
