@@ -19,7 +19,7 @@ int main(void)
     char *str;
     int len;
 
-    str = "My first strlen!";
+    str = "";
    
     printf("%c\n", str[0]);
     len = _strlen(str);
