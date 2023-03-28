@@ -8,9 +8,10 @@
  */
 int main(void)
 {
-   int nb;
+   int n;
 
-    
+    n = _atoi("+++++ +-+ 2242454");
+	printf("%d\n", n);
     return (0);
 
 }

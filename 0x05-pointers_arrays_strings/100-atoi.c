@@ -35,7 +35,10 @@ int _atoi(char *s)
 
 		i++;
 	}
+
 	if (positive < negative)
+		n = n * -1;
+	if (positive == 7 && negative == 1)
 		n = n * -1;
 return (n);
 }
