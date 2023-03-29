@@ -8,12 +8,22 @@
  */
 int main(void)
 {
-    char s[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    char s[] = "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher.\n";
     char *p;
 
-    p = leet(s);
+    p = rot13(s);
     printf("%s", p);
+    printf("------------------------------------\n");
     printf("%s", s);
-    printf("\n");
+    printf("------------------------------------\n");
+    p = rot13(s);
+    printf("%s", p);
+    printf("------------------------------------\n");
+    printf("%s", s);
+    printf("------------------------------------\n");
+    p = rot13(s);
+    printf("%s", p);
+    printf("------------------------------------\n");
+    printf("%s", s);
     return (0);
 }
