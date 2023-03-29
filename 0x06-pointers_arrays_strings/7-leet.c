@@ -15,6 +15,11 @@ char *leet(char *src)
 	 'j', 'k', '1', 'm', 'n', '0', 'p', 'q', 'r',
 	  's', '7', 'u', 'v', 'w', 'x', 'y', 'z'};
 
+	char uppercase_alphabets[] = {'4', 'B', 'C', 'D', '3', 'F', 'G', 'H', 'I', 'J', 'K', '1',
+	 'M', 'N', '0', 'P', 'Q', 'R', 'S', '7',
+	  'U', 'V', 'W', 'X', 'Y', 'Z'};
+
+
 	i = 0;
 	while (src[i] != '\0')
 	{
@@ -25,11 +30,10 @@ char *leet(char *src)
 			{
 				src[i] = alphabets[src[i] - 97];
 			}
-
-			src[i] = alphabets[src[i] - 65];
-
+			src[i] = uppercase_alphabets[src[i] - 65];
 			break;
 		}
+
 		i++;
 	}
 	return (src);
