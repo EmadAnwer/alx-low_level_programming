@@ -10,7 +10,7 @@ int main(void)
 {
    int n;
 
-    n = _atoi("+++++ +-+ 2242454");
+    n = _atoi("+++++ +-+ 2242454 ");
 	printf("%d\n", n);
     return (0);
 
