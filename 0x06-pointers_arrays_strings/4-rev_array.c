@@ -1,6 +1,6 @@
 /*
  * 0x06. C - More pointers, arrays and strings
- * task 2
+ * task 4
  */
 #include "main.h"
 /**
