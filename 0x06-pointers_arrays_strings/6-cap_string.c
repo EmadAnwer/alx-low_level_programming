@@ -13,6 +13,10 @@ char *cap_string(char *src)
 	int i;
 
 	i = 0;
+	if ((src[i] >= 'a') && (src[i] <= 'z'))
+	{
+		src[i] = src[i] - 32;
+	}
 	while (src[i] != '\0')
 	{
 		if ((src[i] == ' ')
