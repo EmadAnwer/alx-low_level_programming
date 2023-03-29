@@ -25,10 +25,9 @@ char *leet(char *src)
 			{
 				src[i] = alphabets[src[i] - 97];
 			}
-			else
-			{
-				src[i] = alphabets[src[i] - 65];
-			}
+
+			src[i] = alphabets[src[i] - 65];
+
 			break;
 		}
 		i++;
