@@ -11,29 +11,25 @@
 char *leet(char *src)
 {
 	int i;
+	char alphabets[] = {'4', 'b', 'c', 'd', '3', 'f', 'g', 'h', 'i',
+	 'j', 'k', '1', 'm', 'n', '0', 'p', 'q', 'r',
+	  's', '7', 'u', 'v', 'w', 'x', 'y', 'z'};
 
 	i = 0;
 	while (src[i] != '\0')
 	{
-		if ((src[i] == 'a') || (src[i] == 'A'))
+		while (((src[i] >= 'a') && (src[i] <= 'z'))
+		|| ((src[i] >= 'A') && (src[i] <= 'Z')))
 		{
-			src[i] = '4';
-		}
-		else if ((src[i] == 'e') || (src[i] == 'E'))
-		{
-			src[i] = '3';
-		}
-		else if ((src[i] == 'o') || (src[i] == 'O'))
-		{
-			src[i] = '0';
-		}
-		else if ((src[i] == 't') || (src[i] == 'T'))
-		{
-			src[i] = '7';
-		}
-		else if ((src[i] == 'l') || (src[i] == 'L'))
-		{
-			src[i] = '1';
+			if ((src[i] >= 'a') && (src[i] <= 'z'))
+			{
+				src[i] = alphabets[src[i] - 97];
+			}
+			else
+			{
+				src[i] = alphabets[src[i] - 65];
+			}
+			break;
 		}
 		i++;
 	}
