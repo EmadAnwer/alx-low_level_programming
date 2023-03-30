@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <string.h>
+#include <stdio.h>
 /**
  * main - check the code
  *
@@ -7,15 +8,18 @@
  */
 int main(void)
 {
-    print_number(98);
-    _putchar('\n');
-    print_number(402);
-    _putchar('\n');
-    print_number(1024);
-    _putchar('\n');
-    print_number(0);
-    _putchar('\n');
-    print_number(-98);
-    _putchar('\n');
+        char *m = "99999999";
+        char *n = "1";
+        char r[100];
+        char *res;
+        res = infinite_add(n, m, r, 100);
+        if (res == 0)
+        {
+                printf("Error\n");
+        }
+        else
+        {
+                printf("%s + %s = %s\n", n, m, res);
+        }
     return (0);
 }
