@@ -37,7 +37,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
     {
         /*out of size*/
         if((size_r - i - 2) < 0)
-            return(0);
+            return(&longer[lastOfLonger + 1]);
+
+
         if (i > lastOfShorter && (lastOfLonger - i >= 0))
             temp = temp + (longer[lastOfLonger - i] - '0');
         else
