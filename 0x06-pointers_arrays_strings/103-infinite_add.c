@@ -43,6 +43,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
         else
           if(i <= lastOfLonger)
             temp = temp + (longer[lastOfLonger - i] - '0') + (shorter[lastOfShorter - i] - '0');
+        if(i > lastOfLonger && temp == 0)
+          break;
         if (temp > 9)
             {
                 r[size_r - i - 2]  = '0' + temp % 10;
