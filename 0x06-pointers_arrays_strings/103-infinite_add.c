@@ -1,6 +1,6 @@
 /*
  * 0x06. C - More pointers, arrays and strings
- * task 6
+ * task 11
  */
 #include "main.h"
 #include <string.h>
@@ -14,48 +14,44 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-    int i, lastOfLonger, lastOfShorter, temp;
-    char *longer, *shorter;
+	int i, longer, shorter, temp;
+	char *sLonger, *sShorter;
 
-    lastOfLonger = strlen(n1) - 1;
-    lastOfShorter = strlen(n2) - 1;
-    if (lastOfLonger >= lastOfShorter)
-    {
-        longer = n1;
-        shorter = n2;
-    }
-    else
-    {
-        longer = n2;
-        shorter = n1;
-        temp = lastOfLonger;
-        lastOfLonger = lastOfShorter;
-        lastOfShorter = temp;
-    }
-    temp = 0;
-    for (i = 0; i <= lastOfLonger+1; i++)
-    {
-        /*out of size*/
-        if((size_r - i - 2) < 0)
-            return(0);
-        if (i > lastOfShorter && (lastOfLonger - i >= 0))
-            temp = temp + (longer[lastOfLonger - i] - '0');
-        else
-          if(i <= lastOfLonger)
-            temp = temp + (longer[lastOfLonger - i] - '0') + (shorter[lastOfShorter - i] - '0');
-        if(i > lastOfLonger && temp == 0)
-          break;
-        if (temp > 9)
-            {
-                r[size_r - i - 2]  = '0' + temp % 10;
-                temp = 1;
-            }
-            else
-            {
-                r[size_r - i - 2] = '0' + temp;
-                temp = 0;
-            }
-    }
-    r[size_r - 1] = '\0';
-    return (&r[size_r - i - 1]);
+	longer = strlen(n1) - 1;
+	shorter = strlen(n2) - 1;
+	if (longer >= shorter)
+	{
+		sLonger = n1;
+		sShorter = n2;
+	}
+	else
+	{
+		sLonger = n2;
+		sShorter = n1;
+		temp = longer;
+		longer = shorter;
+		shorter = temp;
+	}
+	temp = 0;
+	for (i = 0; i <= longer + 1 && !(i > longer && temp == 0); i++)
+	{
+		if ((size_r - i - 2) < 0)
+			return (0);
+		if (i > shorter && (longer - i >= 0))
+			temp = temp + (sLonger[longer - i] - '0');
+		else if (i <= longer)
+			temp = temp + (sLonger[longer - i] - '0') + (sShorter[shorter - i] - '0');
+		if (temp > 9)
+		{
+			r[size_r - i - 2]  = '0' + temp % 10;
+			temp = 1;
+		}
+		else
+		{
+			r[size_r - i - 2] = '0' + temp;
+			temp = 0;
+		}
+	}
+	r[size_r - 1] = '\0';
+	return (&r[size_r - i - 1]);
 }
