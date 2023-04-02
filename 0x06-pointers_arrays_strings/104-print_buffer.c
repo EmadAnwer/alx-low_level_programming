@@ -13,6 +13,11 @@ void print_buffer(char *b, int size)
 {
 	int i, z;
 
+	if (size == 0)
+	{
+		printf("\n");
+		return;
+	}
 	z = 0;
 	while (z < size)
 	{
@@ -26,8 +31,10 @@ void print_buffer(char *b, int size)
 			}
 			else
 			{
-				printf("%02x", b[z + i]);
-				i++;
+				printf("%02x", b[z + (i++)]);
+				if (z + i >= size)
+					printf("   ");
+				else
 				printf("%02x ", b[z + i]);
 			}
 		}
@@ -39,6 +46,9 @@ void print_buffer(char *b, int size)
 				printf("%c", b[z + i]);
 		}
 		printf("\n");
-		z += 10;
+		if (z + 10 > size)
+			z = size;
+		else
+			z += 10;
 	}
 }
