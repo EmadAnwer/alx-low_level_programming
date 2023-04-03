@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * _strpbrk - returns the number of characters in the initial segment
+ * _strstr - returns the number of characters in the initial segment
  * @haystack: array refrance
  * @needle: array refrance
  * Return: array refrance
@@ -15,7 +15,9 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, j;
 
-	for (i = 0; needle[i] != '\0' && needle[0] != '\0'; i++)
+	if (needle[0] != '\0')
+		return (NULL);
+	for (i = 0; needle[i] != '\0'; i++)
 	{
 		for (j = 0; haystack[j] != '\0'; j++)
 		{
