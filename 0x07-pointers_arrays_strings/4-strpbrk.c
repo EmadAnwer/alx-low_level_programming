@@ -15,7 +15,7 @@ char *_strpbrk(char *s, char *accept)
 {
 	int i, j, sp;
 
-	sp = 1000000000;
+	sp = 2147483647;
 	for (i = 0; accept[i] != '\0'; i++)
 	{
 		for (j = 0; s[j] != '\0'; j++)
@@ -26,5 +26,8 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
+	if (sp == 2147483647)
+		return (NULL);
+
 	return (s + sp);
 }
