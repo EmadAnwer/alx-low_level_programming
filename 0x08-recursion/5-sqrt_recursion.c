@@ -15,9 +15,9 @@ int sqrtHelper(int v, int n)
 	/*bad algorithm*/
 	if (v * v == n)
 		return (v);
-	if (v <= 0)
+	if (v >= n)
 		return (-1);
-	return (sqrtHelper(v - 1, n));
+	return (sqrtHelper(v + 1, n));
 }
 /**
  * _sqrt_recursion - x pow y
@@ -26,5 +26,5 @@ int sqrtHelper(int v, int n)
  */
 int _sqrt_recursion(int n)
 {
-	return (sqrtHelper(n, n));
+	return (sqrtHelper(1, n));
 }
