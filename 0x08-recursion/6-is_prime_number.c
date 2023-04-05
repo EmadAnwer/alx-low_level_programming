@@ -3,7 +3,7 @@
  * task 6
  */
 /**
- * sqrtHelper - x pow y
+ * check_prime - x pow y
  * @n: int
  * @factor: int factor
  * Return: sqrt int
