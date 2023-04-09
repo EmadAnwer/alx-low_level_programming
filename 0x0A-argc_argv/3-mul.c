@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /*
  * Task 3 in 0x0A. C - argc, argv
- * Purpose : Write a program that prints all arguments it receives.
+ * Purpose : multiplies two numbers "arguments"
  */
 
 /**
