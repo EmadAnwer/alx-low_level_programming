@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /*
- * Task 3 in 0x0A. C - argc, argv
+ * Task 4 in 0x0A. C - argc, argv
  * Purpose : adds positive numbers.
  */
 
