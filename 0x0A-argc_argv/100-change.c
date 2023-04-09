@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
 	int a, total, i;
-	int changes[4] = {25,10,2,1};
+	int changes[4] = {25, 10, 2, 1};
 
 	a = 0;
 	if (argc == 1)
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	total = atoi(argv[1]);
-	if(total <= 0)
+	if (total <= 0)
 	{
 		printf("0\n");
 		return (0);
@@ -32,8 +32,8 @@ int main(int argc, char *argv[])
 	for (i = 0; i < 4; i++)
 	{
 		a = a + (total / changes[i]);
-		total = total % changes[i] ;
-		if(total == 0)
+		total = total % changes[i];
+		if (total == 0)
 			break;
 	}
 	printf("%d\n", a);
