@@ -1,6 +1,6 @@
 /*
  * 0x0B. C - malloc, free
- * task 0
+ * task 3
  */
 #include "main.h"
 #include <stdio.h>
@@ -29,6 +29,7 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		grid[i] = malloc(sizeof(int) * width);
+		/*free every thing*/
 		if (grid[i] == NULL)
 		{
 			while (i != 0)
