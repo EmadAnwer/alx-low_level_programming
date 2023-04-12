@@ -75,7 +75,7 @@ char **strtow(char *str)
 		return (NULL);
 	wordsCount = 0;
 	wordsCount = wordsCounter(str);
-	words = malloc(wordsCount * sizeof(char *));
+	words = malloc(wordsCount * sizeof(char *) + 1);
 	if (words == NULL)
 		return (NULL);
 	word = str;
@@ -85,7 +85,7 @@ char **strtow(char *str)
 		l = 0;
 		while (word[l] != '\0' && word[l] != ' ')
 			l++;
-		words[i] = malloc(sizeof(char) * l + 1);
+		words[i] = malloc(sizeof(char) * l + 2);
 		if (words == NULL)
 		{
 			/*free*/
