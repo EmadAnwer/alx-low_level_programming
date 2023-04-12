@@ -19,7 +19,7 @@ int wordsCounter(char *str)
 	wordsCount = 0;
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((str[i] == 0) && (str[i] != ' '))
+		if ((i == 0) && (str[i] != ' '))
 		{
 			wordsCount++;
 		}
@@ -45,7 +45,7 @@ char *findWord(char *str)
 
 		for (i = 0; str[i] != '\0'; i++)
 		{
-			if (str[i] == 0 && str[i] != ' ')
+			if (i == 0 && str[i] != ' ')
 			{
 				return (&str[i]);
 			}
@@ -71,10 +71,12 @@ char **strtow(char *str)
 	char **words, *word;
 
 	len = strlen(str);
-	if (len == 0 || str == NULL || len == 1)
+	if (len == 0 || str == NULL)
 		return (NULL);
 	wordsCount = 0;
 	wordsCount = wordsCounter(str);
+	if (wordsCount == 0)
+		return (NULL);
 	words = malloc(wordsCount * sizeof(char *) + 1);
 	if (words == NULL)
 		return (NULL);
