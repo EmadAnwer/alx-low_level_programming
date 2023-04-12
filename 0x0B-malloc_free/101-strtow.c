@@ -71,7 +71,7 @@ char **strtow(char *str)
 	char **words, *word;
 
 	len = strlen(str);
-	if (len == 0 || str == NULL)
+	if (len <= 1 || str == NULL)
 		return (NULL);
 	wordsCount = 0;
 	wordsCount = wordsCounter(str);
