@@ -3,49 +3,36 @@
 #include <stdlib.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * print_tab - Prints an array of string
+ * @tab: The array to print
  *
- * Return: Nothing.
+ * Return: nothing
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+void print_tab(char **tab)
 {
-    unsigned int i;
+    int i;
 
-    i = 0;
-    while (i < size)
+    for (i = 0; tab[i] != NULL; ++i)
     {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", buffer[i]);
-        i++;
+        printf("%s\n", tab[i]);
     }
-    printf("\n");
 }
 
 /**
  * main - check the code for ALX School students.
  *
- * Return: Always 0.
+ * Return: 1 if an error occurred, 0 otherwise
  */
 int main(void)
 {
-    char *buffer;
+    char **tab;
 
-    buffer = create_array(98, 'H');
-    if  (buffer == NULL)
+    tab = strtow("Talk is cheap. Show me the code.");
+    if (tab == NULL)
     {
-        printf("failed to allocate memory\n");
+        printf("Failed\n");
         return (1);
     }
-    simple_print_buffer(buffer, 98);
-    free(buffer);
+    print_tab(tab);
     return (0);
 }
