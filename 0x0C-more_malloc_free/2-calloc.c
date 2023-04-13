@@ -1,6 +1,6 @@
 /*
  * 0x0C. C - More malloc, free
- * task 0
+ * task 2
  */
 #include "main.h"
 #include <stdlib.h>
