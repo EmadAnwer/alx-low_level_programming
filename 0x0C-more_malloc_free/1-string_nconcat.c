@@ -18,7 +18,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *concat;
 	/*if NULL is passed, treat it as an empty string*/
 	if (s1 == NULL && s2 == NULL)
-		return ("");
+	{
+		concat =  malloc(1);
+		if (concat == NULL)
+			return (NULL);
+		concat[0] = '\0';
+		return (concat);
+	}
 	if (s2 != NULL)
 	{
 		if (strlen(s2) < n)
