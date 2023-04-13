@@ -81,20 +81,18 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	isNumbers = is_number(argv[1]) +  is_number(argv[1]);
-	printf("isNumbers %d\n", isNumbers);
 	if (isNumbers != 2)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 	larger = larger_num(argv[1], argv[2]);
-	printf("larger is %d\n", larger);
 
 	if (larger == 1)
 		total = mul_number(argv[1], argv[2]);
 	else
 		total = mul_number(argv[2], argv[1]);
-	isNumbers = (int)atoi(argv[1]) * (int)atoi(argv[2]);
-	printf("%i\n", isNumbers);
+
+	printf("%lu\n", (atol(argv[1]) * atol(argv[2])));
 	return (0);
 }
