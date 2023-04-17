@@ -3,6 +3,7 @@
  * task 6
  */
 #include "dog.h"
+#include <stdio.h>
 /**
  * init_dog - capitalizes all words of a string
  * @d: struct refrance
@@ -13,6 +14,11 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	struct dog my_dog;
+
+	if(d == NULL)
+		d = &my_dog;
+
 	d->age = age;
 	d->name = name;
 	d->owner = owner;
