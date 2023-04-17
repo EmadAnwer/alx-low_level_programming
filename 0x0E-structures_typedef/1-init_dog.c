@@ -10,7 +10,6 @@
  * @name: name of the dog refrance
  * @age: age of the dog value
  * @owner: owner of the dog refrance
- * Return: *src "all words of a string capital"
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
