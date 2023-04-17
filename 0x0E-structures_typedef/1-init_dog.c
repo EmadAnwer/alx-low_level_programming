@@ -1,11 +1,11 @@
 /*
- * 0x06. C - More pointers, arrays and strings
- * task 6
+ * 0x0E. C - Structures, typedef
+ * task 1
  */
 #include "dog.h"
 #include <stdio.h>
 /**
- * init_dog - capitalizes all words of a string
+ * init_dog - initialize a variable of type struct dog
  * @d: struct refrance
  * @name: name of the dog refrance
  * @age: age of the dog value
