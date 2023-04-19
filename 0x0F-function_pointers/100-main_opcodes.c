@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /*
  * 0x0F. C - Function pointers
  * task 4 adv
@@ -31,9 +30,12 @@ int main(int argc, char *argv[])
 	for (i = 0; i < n1; i++)
 	{
 		/* go next 1 byte == 1 char*/
-		printf("%02hhx ", *((char *) main + i));
+		if(((char *) main + i) == NULL)
+			break;
+		printf("%02hhx", *((char *) main + i));
+		if(i+1 != n1)
+			printf(" ");
 	}
-
 	printf("\n");
 
 	return (0);
