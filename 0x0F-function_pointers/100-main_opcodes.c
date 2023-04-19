@@ -30,10 +30,8 @@ int main(int argc, char *argv[])
 	for (i = 0; i < n1; i++)
 	{
 		/* go next 1 byte == 1 char*/
-		if(((char *) main + i) == NULL)
-			break;
 		printf("%02hhx", *((char *) main + i));
-		if(i+1 != n1)
+		if (i + 1 != n1)
 			printf(" ");
 	}
 	printf("\n");
