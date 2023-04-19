@@ -3,7 +3,6 @@
  * task 0
  */
 #include "function_pointers.h"
-#include <string.h>
 /**
  * print_name - prints a name.
  * @name: char pointer to name
@@ -12,5 +11,6 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name && f)
+		f(name);
 }
