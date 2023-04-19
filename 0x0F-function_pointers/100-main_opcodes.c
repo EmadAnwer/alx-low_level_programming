@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "3-calc.h"
 /*
  * 0x0F. C - Function pointers
- * task 3
+ * task 4 adv
  */
 /**
  * main - prints its name, followed by a new line.
@@ -15,27 +14,27 @@
 
 int main(int argc, char *argv[])
 {
-	int (*pf)(int, int), n1, n2;
+	int n1, i;
 
-	if (argc != 4)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(1);
 	}
-	pf = get_op_func(argv[2]);
-	if (pf == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
 	n1 = atoi(argv[1]);
-	n2 = atoi(argv[3]);
-	if (((argv[2][0] == '/') || (argv[2][0] == '%')) && (n2 == 0))
+	if (n1 < 0)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(2);
 	}
-	printf("%d\n", pf(n1, n2));
+
+	for (i = 0; i < n1; i++)
+	{
+		/* go next 1 byte == 1 char*/
+		printf("%02hhx ", *((char *) main + i));
+	}
+
+	printf("\n");
+
 	return (0);
 }
