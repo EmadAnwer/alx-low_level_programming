@@ -50,17 +50,15 @@ void print_all(const char * const format, ...)
 	{'s', print_str},
 	};
 	char s[] = "cifs";
-	char *e;
 	va_start(args, format);
 	i = 0;
 	
 	while (format[i])
 	{
-		e = strchr(s, format[i]);
 	
-		while (e)
+		while (strchr(s, format[i]))
 		{
-			index = (int)(e - s);
+			index = (int)(strchr(s, format[i]) - s);
 			chars[index].f(args);
 			if (format[i + 1] != '\0')
 				printf(", ");
