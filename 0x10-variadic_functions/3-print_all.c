@@ -8,7 +8,7 @@
  */
 
 /**
- * print_int - printfs a string from var args
+ * print_int - print int from var args
  *
  * @args: args to print from
  *
@@ -20,7 +20,7 @@ void print_int(va_list args)
 }
 
 /**
- * print_str - printfs a string from var args
+ * print_str - print str from var args
  *
  * @args: args to print from
  *
@@ -40,7 +40,7 @@ void print_str(va_list args)
 }
 
 /**
- * print_float - printfs a string from var args
+ * print_float - print float from var args
  *
  * @args: args to print from
  *
@@ -52,7 +52,7 @@ void print_float(va_list args)
 }
 
 /**
- * print_char - printfs a string from var args
+ * print_char - print float from var args
  *
  * @args: args to print from
  *
@@ -73,17 +73,19 @@ void print_all(const char * const format, ...)
 	va_list args;
 	c_t chars[] = {{'c', print_char}, {'i', print_int}, {'f', print_float},
 	{'s', print_str},};
-	char s[] = "cifs";
+	char s[] = "cifs";/*all formats on the same sort of chars array*/
+	char *e;
 
 	va_start(args, format);
 	i = 0;
 
 	while ((format != NULL) && (format[i]))
 	{
-
-		while (strchr(s, format[i]))
+		/*if format[i] is not in s will return null*/
+		e = strchr(s, format[i]);
+		while (e)
 		{
-			index = (int)(strchr(s, format[i]) - s);
+			index = (int)(e - s);
 			chars[index].f(args);
 			if (format[i + 1] != '\0')
 				printf(", ");
