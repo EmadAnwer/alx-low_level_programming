@@ -41,7 +41,7 @@ void print_char(va_list args)
 
 void print_all(const char * const format, ...)
 {
-	int i, index;
+	int i, j;
 	va_list args;
 	c_t chars[] = {
 	{'c', print_char},
@@ -50,25 +50,26 @@ void print_all(const char * const format, ...)
 	{'s', print_str},
 	};
 	char s[] = "cifs";
-	char *e;
 	va_start(args, format);
 	i = 0;
 	
 	while (format[i])
 	{
-		e = strchr(s, format[i]);
-	
-		while (e)
+		j = 0;
+		
+		while (j < 4)
 		{
-			index = (int)(e - s);
-			chars[index].f(args);
-			if (format[i + 1] != '\0')
-				printf(", ");
-			break;
+			if (chars[j].c == format[i])
+			{
+				chars[j].f(args);
+				if (format[i + 1] != '\0')
+					printf(", ");
+			}
+			j++;
 		}
 		i++;
 	}
-
+	
 	printf("\n");
 	va_end(args);
 }
