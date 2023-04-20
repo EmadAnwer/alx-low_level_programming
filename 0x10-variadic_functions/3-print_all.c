@@ -32,9 +32,11 @@ void print_str(va_list args)
 
 	s = va_arg(args, char*);
 	if (s != NULL)
+	{
 		printf("%s", s);
-	else
-		printf("(nil)");
+		return;
+	}
+	printf("(nil)");
 }
 
 /**
