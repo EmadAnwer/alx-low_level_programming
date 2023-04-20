@@ -9,12 +9,12 @@ void print_all(const char * const format, ...);
 /**
  * struct cformat - Struct cformat
  *
- * @op: The operator
+ * @c: The operator
  * @f: The function associated
  */
 typedef struct cformat
 {
-    char c;
-    void (*f)(va_list args);
+	char c;
+	void (*f)(va_list args);
 } c_t;
 #endif /* VARIADIC_FUNCTIONS_H */
