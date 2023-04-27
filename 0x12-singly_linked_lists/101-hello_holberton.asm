@@ -1,15 +1,23 @@
-        extern puts
-        global main
+bits 64
+    global main
+    extern printf
 
-        section .rodata
-msg:    db "Hello, Holberton", 0
-
-        section .text
+    section .text
 main:
-        ;;  puts (msg)
-        mov rdi, msg
-        call puts wrt ..plt
+    ; function setup
+    push    rbp
+    mov     rbp, rsp
+    sub     rsp, 32
+    ;
+    lea     rdi, [rel message]
+    mov     al, 0
+    call    printf
 
-        ;;  return 0
-        mov eax, 0
-        ret
+    ; function return
+    mov     eax, 0
+    add     rsp, 32
+    pop     rbp
+    ret
+
+    section .data
+message: db   "Hello, Holberton",0xA
