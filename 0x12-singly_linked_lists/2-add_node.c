@@ -6,7 +6,8 @@
  */
 #include "lists.h"
 /**
- * head - pointer to a head pointer
+ * add_node - creat a new node at the beginning of a list_t list.
+ * @head: pointer to a head pointer
  * @str: string reference
  * Return: list size
  */
@@ -18,11 +19,11 @@ list_t *add_node(list_t **head, const char *str)
 	l = malloc(sizeof(list_t));
 	if (l == NULL)
 		return (NULL);
-	
-	if(str)
+
+	if (str)
 	{
 		s_cpy = strdup(str);
-		if(s_cpy == NULL)
+		if (s_cpy == NULL)
 		{
 			free(l);
 			return (NULL);
