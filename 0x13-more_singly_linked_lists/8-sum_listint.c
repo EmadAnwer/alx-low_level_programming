@@ -4,7 +4,7 @@
  */
 #include "lists.h"
 /**
- * sum_listint - deletes the head node of a listint_t linked list
+ * sum_listint - sum of all the data (n) of a listint_t linked list.
  * @head: pointer to a head pointer
  * Return: the head node’s data (n) or 0
  */

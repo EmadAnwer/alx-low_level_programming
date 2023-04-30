@@ -4,10 +4,9 @@
  */
 #include "lists.h"
 /**
- * insert_nodeint_at_index - deletes the head node of a listint_t linked list
+ * delete_nodeint_at_index - deletes node at index index of linked list.
  * @head: pointer to a head pointer
- * @idx: index
- * @n: number
+ * @index: index
  * Return: the head node’s data (n) or 0
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
@@ -16,16 +15,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	next = *head;
 	if (head == NULL || *head == NULL)
-		return(-1);
-	
+		return (-1);
 	if (index == 0)
 	{
 		tofree = *head;
-
-		if(tofree->next)
+		if (tofree->next)
 			*head = tofree->next;
-		else 
-			*head = NULL; 
+		else
+			*head = NULL;
 		free(tofree);
 		return (1);
 	}

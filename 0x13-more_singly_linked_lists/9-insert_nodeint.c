@@ -4,7 +4,7 @@
  */
 #include "lists.h"
 /**
- * insert_nodeint_at_index - deletes the head node of a listint_t linked list
+ * insert_nodeint_at_index -  inserts a new node at a given position.
  * @head: pointer to a head pointer
  * @idx: index
  * @n: number
