@@ -4,28 +4,33 @@
  */
 #include "lists.h"
 /**
- * delete_nodeint_at_index - deletes node at index index of linked list.
+ * reverse_listint - deletes node at index index of linked list.
  * @head: pointer to a head pointer
- * @index: index
  * Return: the head node’s data (n) or 0
  */
 
 listint_t *reverse_listint(listint_t **head)
 {
-
 	listint_t *temp2, *temp;
-	
-	
+
+	if (head == NULL || *head == NULL)
+		return (NULL);
+
+	if ((*head)->next == NULL)
+		return (*head);
+	temp = *head;
+	temp2 = temp->next;
+	*head = temp2->next;
+	temp->next = NULL;
 	while ((*head)->next)
-	{ 
-		temp = (*head)->next;
-		temp2 = temp->next;
-		(*head)->next = temp2;
-		temp->next = (*head);
-		temp2 =	temp;
-		*head = temp;
+	{
+		temp2->next = temp;
+		temp = temp2;
+		temp2 = (*head);
+		*head = (*head)->next;
 	}
-	(*head)->next = NULL;
-	return(temp2);
+	(*head)->next = temp2;
+	temp2->next = temp;
+	return (*head);
 
 }
