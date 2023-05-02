@@ -1,8 +1,38 @@
 /*
  * 0x13. C - More singly linked lists
- * task 9
+ * task Adv 1
  */
 #include "lists.h"
+
+/**
+ * reverse_helper - reverses a listint list recursively
+ *
+ * @f: node to reverse
+ * @s: node after node to reverse
+ *
+ * Return: void
+ */
+listint_t *reverse_helper(listint_t *f, listint_t *s)
+{
+	listint_t *ptr, *prev;
+
+	prev = NULL;
+	ptr = f;
+	while (ptr->next != s)
+	{
+		prev = ptr;
+		ptr = ptr->next;
+	}
+
+	if (prev != NULL)
+		prev->next = f;
+	s = f->next;
+	f->next = ptr->next;
+	if (f != ptr && s != f)
+		s = reverse_helper(s, f);
+	ptr->next = s;
+	return (ptr);
+}
 /**
  * reverse_listint - deletes node at index index of linked list.
  * @head: pointer to a head pointer
@@ -11,26 +41,11 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *temp2, *temp;
 
 	if (head == NULL || *head == NULL)
 		return (NULL);
 
-	if ((*head)->next == NULL)
-		return (*head);
-	temp = *head;
-	temp2 = temp->next;
-	*head = temp2->next;
-	temp->next = NULL;
-	while ((*head)->next)
-	{
-		temp2->next = temp;
-		temp = temp2;
-		temp2 = (*head);
-		*head = (*head)->next;
-	}
-	(*head)->next = temp2;
-	temp2->next = temp;
-	return (head);
+	*head = reverse_helper(*head, NULL);
+	return (*head);
 
 }
