@@ -22,7 +22,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	if(p > *n)
 		*n = 0;
 	else 
-		*n = *n - _pow(2, index);
+		*n = *n - p;
 	return (1);
 }
 /**
