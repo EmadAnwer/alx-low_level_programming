@@ -15,13 +15,13 @@ unsigned long int _pow(int base, int pow);
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int p;
+
 	if (index >= 32)
 		return (-1);
-	
+
 	p = _pow(2, index);
 	if (*n >> index & 1)
 		*n = *n - p;
-		
 	return (1);
 }
 /**
