@@ -16,7 +16,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int p;
 
-	if (index >= 32)
+	if (index >= 64)
 		return (-1);
 
 	p = _pow(2, index);
