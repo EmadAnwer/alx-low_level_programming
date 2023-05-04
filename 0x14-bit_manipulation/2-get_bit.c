@@ -1,6 +1,6 @@
 /*
  * 0x14. C - Bit manipulation
- * task 1
+ * task 2
  */
 #include "main.h"
 /**

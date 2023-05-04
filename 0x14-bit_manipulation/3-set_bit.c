@@ -1,6 +1,6 @@
 /*
  * 0x14. C - Bit manipulation
- * task 1
+ * task 3
  */
 #include "main.h"
 /*prototypes*/
@@ -16,7 +16,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	if (index >= 32)
 		return (-1);
-	*n = *n + _pow(2, index); 
+	*n = *n + _pow(2, index);
 	return (1);
 }
 /**
