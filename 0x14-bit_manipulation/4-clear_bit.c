@@ -4,7 +4,7 @@
  */
 #include "main.h"
 /*prototypes*/
-unsigned int _pow(int base, int pow);
+unsigned long int _pow(int base, int pow);
 /**
  * clear_bit -  sets the value of a bit to 0 at a given index.
  * @n: binary number array pointer.
@@ -17,6 +17,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int p;
 	if (index >= 32)
 		return (-1);
+	
 	p = _pow(2, index);
 	if(p > *n)
 		*n = 0;
@@ -30,9 +31,9 @@ int clear_bit(unsigned long int *n, unsigned int index)
  * @pow: power
  * Return: result
  */
-unsigned int _pow(int base, int pow)
+unsigned long int _pow(int base, int pow)
 {
-	unsigned int result;
+	unsigned long int result;
 
 	if (pow == 0)
 		return (1);
