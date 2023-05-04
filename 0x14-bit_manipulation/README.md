@@ -1,5 +1,6 @@
-0x0C. C - More malloc, free
+0x14. C - Bit manipulation
+
 
 General
-How to use the exit function
-What are the functions calloc and realloc from the standard library and how to use them
+	Look for the right source of information without too much help
+	How to manipulate bits and use bitwise operators
