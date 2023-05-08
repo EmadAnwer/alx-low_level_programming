@@ -1,5 +1,5 @@
 /*
- * 0x14. C - Bit manipulation
+ * 0x15. C - File I/O
  * task 0
  */
 #include "main.h"
@@ -12,7 +12,7 @@
  * read_textfile - eads a text file and prints it to the POSIX standard output.
  * @filename: filename
  * @letters: number of letters it should read and print
- * Return: converted number, or 0.
+ * Return: number, or 0.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
