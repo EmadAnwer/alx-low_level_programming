@@ -3,11 +3,7 @@
  * task 1
  */
 #include "main.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
+
 /**
  * create_file - function that creates a file.
  * @filename: filename

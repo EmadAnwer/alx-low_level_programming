@@ -3,11 +3,6 @@
  * task 2
  */
 #include "main.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
 /**
  * append_text_to_file - appends text at the end of a file.
  * @filename: filename
