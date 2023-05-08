@@ -16,6 +16,7 @@
 int main(int ac, char **av)
 {
 	int fd;
+
 	if (ac != 2)
 	{
 		write(STDERR_FILENO, "Usage: elf_header elf_filename\n", 31);
