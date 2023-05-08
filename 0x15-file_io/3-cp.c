@@ -15,7 +15,7 @@
  */
 int main(int ac, char **av)
 {
-    int fd_from, fd_to;
+    int fd_from, fd_to, nr;
 	char buf[1024];
     if (ac != 3)
     {
@@ -31,16 +31,45 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	fd_from = open(av[1], O_RDONLY);
-	if(read(fd_from, buf, 1024) == -1)
+	if((fd_from = open(av[1], O_RDONLY)) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	if (write(fd_to, buf, strlen(buf)) == -1)
+
+	while((nr = read(fd_from, buf, 1024)))
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
+		if (nr == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			if(close(fd_from) == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
+				exit(100);
+			}
+			if(close(fd_to) == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
+				exit(100);
+			}
+			exit(98);
+		}
+		if(nr != write(fd_to, buf, nr))
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			if(close(fd_from) == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
+				exit(100);
+			}
+			if(close(fd_to) == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
+				exit(100);
+			}
+			exit(99);
+		}
+
 	}	
 	if(close(fd_from) == -1)
 	{
