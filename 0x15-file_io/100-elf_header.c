@@ -29,5 +29,5 @@ int main(int ac, char **av)
 		write(STDERR_FILENO, "Error: Can't read from file\n", 28);
 		exit(98);
 	}
-	return (0);
+	exit(98);
 }
