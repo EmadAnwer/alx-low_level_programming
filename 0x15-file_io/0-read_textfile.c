@@ -22,13 +22,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 	file_descriptor = open(filename, O_RDONLY);
-	if(file_descriptor == -1)
+	if (file_descriptor == -1)
 		return (0);
 	buf = malloc(sizeof(char) * letters);
-
-	
 	letters = read(file_descriptor, buf, letters);
-	if((size_t) write(STDOUT_FILENO, buf, letters) != letters)
+	if ((size_t) write(STDOUT_FILENO, buf, letters) != letters)
 		return (0);
 	close(file_descriptor);
 	free(buf);
