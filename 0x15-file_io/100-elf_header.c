@@ -47,8 +47,8 @@ int main(int ac, char **av)
 	t_class = class(buf);
 	s_data = data(buf);
 	version(buf);
-	abivers(buf);
 	osabi(buf);
+	abivers(buf);
 	lseek(fd, 24, SEEK_SET);
 	type(buf, s_data);
 	read(fd, (char *) buf, t_class / 8);
