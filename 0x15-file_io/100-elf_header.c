@@ -68,14 +68,13 @@ void magic(char *buf)
 {
 	int i;
 
-	printf("ELF Header:\n  Magic:  ");
 	if ((buf[0] != 127) || (buf[1] != 'E')
 	|| (buf[2] != 'L') || (buf[3] != 'F'))
 	{
 		write(STDERR_FILENO, "Error: not ELF file\n", 20);
 		exit(98);
 	}
-
+	printf("ELF Header:\n  Magic:  ");
 	for (i = 0; i < 16; i++)
 	{
 		printf(" %.2x", buf[i]);
