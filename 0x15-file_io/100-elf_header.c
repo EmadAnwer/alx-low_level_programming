@@ -144,7 +144,7 @@ int data(char *buf)
 void version(char *buf)
 {
 	printf("  %-35s%u", "Version:", buf[EI_VERSION]);
-	if (EV_CURRENT == buf[EI_VERSION])
+	if ( buf[EI_VERSION] == EV_CURRENT && 1)
 		printf(" (current)\n");
 	else
 		printf("\n");
