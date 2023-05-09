@@ -68,7 +68,7 @@ void magic(char *buf)
 {
 	int i;
 
-	printf("ELF Header:\n  Magic:   ");
+	printf("ELF Header:\n  Magic:  ");
 	if ((buf[0] != 127) || (buf[1] != 'E')
 	|| (buf[2] != 'L') || (buf[3] != 'F'))
 	{
@@ -78,7 +78,7 @@ void magic(char *buf)
 
 	for (i = 0; i < 16; i++)
 	{
-		printf("%.2x ", buf[i]);
+		printf(" %.2x", buf[i]);
 	}
 	printf("\n");
 }
