@@ -3,6 +3,7 @@
  * task 8
  */
 #include "lists.h"
+
 /**
  * delete_dnodeint_at_index - Deletes the node at the given index
  * @head: Pointer to the head of the doubly linked list
@@ -12,7 +13,7 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	 dlistint_t *tmp, *current;
+	 dlistint_t *current;
 	/* There is no head */
 	if (head == NULL || *head == NULL)
 		return (-1);
