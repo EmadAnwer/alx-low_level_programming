@@ -22,7 +22,7 @@ void shuffleArray(char *array[], int size)
 int main()
 {
 	int numStrings;
-	// Array of strings
+	/*Array of strings*/
 	const char *strings[] = {
 		"zzzzzzzzzzzzzzzzzzzzzzX",
 		"zzzzzzzzzzzzzzzzzzzzzXz",
