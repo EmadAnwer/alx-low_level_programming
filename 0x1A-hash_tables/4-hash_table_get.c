@@ -12,7 +12,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int k_index;
 	hash_node_t *corrent;
-
+	/*check validation*/
 	if (ht == NULL || key == NULL || key[0] == '\0' || ht->size == 0)
 		return (NULL);
 
@@ -25,9 +25,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	while (corrent)
 	{
-		if (strcmp(ht->array[k_index]->key, key) == 0)
+		if (strcmp(corrent->key, key) == 0)
 
-			return (ht->array[k_index]->value);
+			return (corrent->value);
 
 		corrent = corrent->next;
 	}
