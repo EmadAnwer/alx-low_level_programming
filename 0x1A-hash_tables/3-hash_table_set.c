@@ -15,7 +15,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	/*allocat node*/
-	h_node = malloc(sizeof(hash_node_t));
+	h_node = malloc(sizeof(hash_node_t *));
 	if (h_node == NULL)
 		return (0);
 
@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(h_node);
 		return (0);
 	}
-
+	
 	h_node->value = strdup(value);
 	if (h_node->value == NULL)
 	{
