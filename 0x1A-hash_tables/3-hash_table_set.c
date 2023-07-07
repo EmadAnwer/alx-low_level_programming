@@ -91,23 +91,23 @@ int add_node_to_hash_table(hash_table_t *ht, const char *key,
 int update_value(hash_table_t *ht, const char *key,
 				 const char *value, unsigned long int k_index)
 {
-	hash_node_t *corrent;
+	hash_node_t *current;
 
 	if (ht->array[k_index] == NULL)
 		return (0);
-	corrent = ht->array[k_index];
+	current = ht->array[k_index];
 
-	while (corrent)
+	while (current)
 	{
-		if (strcmp(corrent->key, key) == 0)
+		if (strcmp(current->key, key) == 0)
 		{
-			free(corrent->value);
-			corrent->value = strdup(value);
-			if (corrent->value == NULL)
+			free(current->value);
+			current->value = strdup(value);
+			if (current->value == NULL)
 				return (0);
 			return (1);
 		}
-		corrent = corrent->next;
+		current = current->next;
 	}
 	return (0);
 }
