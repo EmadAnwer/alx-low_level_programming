@@ -22,7 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/*get index*/
 	k_index = key_index((unsigned char *)key, ht->size);
-	
+
 	updated_or_added = update_value(ht, key, value, k_index);
 	if (updated_or_added == 0)
 		updated_or_added = add_node_to_hash_table(ht, key, value, k_index);
