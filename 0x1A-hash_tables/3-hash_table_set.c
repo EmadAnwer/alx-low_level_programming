@@ -99,11 +99,11 @@ int update_value(hash_table_t *ht, const char *key,
 
 	while (corrent)
 	{
-		if (strcmp(ht->array[k_index]->key, key) == 0)
+		if (strcmp(corrent->key, key) == 0)
 		{
-			free(ht->array[k_index]->value);
-			ht->array[k_index]->value = strdup(value);
-			if (ht->array[k_index]->value == NULL)
+			free(corrent->value);
+			corrent->value = strdup(value);
+			if (corrent->value == NULL)
 				return (0);
 			return (1);
 		}
