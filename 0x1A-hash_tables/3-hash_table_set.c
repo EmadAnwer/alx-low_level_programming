@@ -25,8 +25,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(h_node);
 		return (0);
 	}
-
+	printf("v before %s\n", value);
 	h_node->value = strdup(value);
+	printf("v after %s\n", h_node->value);
+
 	if (h_node->value == NULL)
 	{
 		free(h_node->key);
@@ -40,11 +42,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[k_index])
 	{
 		h_node->next = ht->array[k_index];
-		ht->array = &h_node;
+		ht->array[k_index] = h_node;
 	}
 	else
 	{
-		ht->array = &h_node;
+		ht->array[k_index] = h_node;
 		h_node->next = NULL;
 	}
 
