@@ -15,18 +15,19 @@ int update_value(hash_table_t *ht, const char *key,
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int k_index;
-	int v = 0;
+	int updated_or_added = 0;
 	/*check validation*/
 	if (ht == NULL || key == NULL || key[0] == '\0')
 		return (0);
 
 	/*get index*/
 	k_index = key_index((unsigned char *)key, ht->size);
-	v = update_value(ht, key, value, k_index);
-	if (v == 0)
-		v = add_node_to_hash_table(ht, key, value, k_index);
+	
+	updated_or_added = update_value(ht, key, value, k_index);
+	if (updated_or_added == 0)
+		updated_or_added = add_node_to_hash_table(ht, key, value, k_index);
 
-	return (v);
+	return (updated_or_added);
 }
 
 /**
