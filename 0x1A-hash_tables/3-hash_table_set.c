@@ -37,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*get index*/
 	k_index = key_index((unsigned char *)h_node->key, ht->size);
 
-	if (ht->array[k_index] != NULL)
+	if (ht->array[k_index])
 	{
 		h_node->next = ht->array[k_index];
 		ht->array[k_index] = h_node;
