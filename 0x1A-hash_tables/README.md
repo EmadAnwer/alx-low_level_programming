@@ -1,4 +1,4 @@
-# Project Name: Project: 0x1A. C - Hash tables
+# Project: 0x1A. C - Hash tables
 
 <h2>Learning Objectives</h2>
 
@@ -12,6 +12,8 @@
 <li>What are the advantages and drawbacks of using hash tables</li>
 <li>What are the most common use cases of hash tables</li>
 </ul>
+
+<h2>Tasks</h2>
 
 | Task | File |
 | ---- | ---- |
