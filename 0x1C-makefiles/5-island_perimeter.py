@@ -18,5 +18,5 @@ def island_perimeter(grid):
                     if not grid[i][j + 1]:
                         count += 1
                 except Exception as e:
-                    count += 1
+                    pass
     return count
