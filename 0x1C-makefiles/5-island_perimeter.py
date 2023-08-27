@@ -5,18 +5,19 @@
 def island_perimeter(grid):
     """ Island Perimeter"""
     count = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
+    rows = len(grid)
+    cols = len(grid[0])
+    perimeter = 0
+
+    for i in range(rows):
+        for j in range(cols):
             if grid[i][j] == 1:
-                try:
-                    if not grid[i + 1][j]:
-                        count += 1
-                    if not grid[i - 1][j]:
-                        count += 1
-                    if not grid[i][j - 1]:
-                        count += 1
-                    if not grid[i][j + 1]:
-                        count += 1
-                except Exception as e:
-                    pass
-    return count
+                perimeter += 4  # Start with 4 sides
+
+                # Check neighbors to subtract shared sides
+                if i > 0 and grid[i - 1][j] == 1:
+                    perimeter -= 2  # Subtract top side
+                if j > 0 and grid[i][j - 1] == 1:
+                    perimeter -= 2  # Subtract left side
+
+    return perimeter
