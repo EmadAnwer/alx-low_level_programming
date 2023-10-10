@@ -8,11 +8,11 @@
  * @value: int value we are looking for
  * Return: Always EXIT_SUCCESS
  */
-int advanced_binary_helper(int *array, size_t l, size_t r, int value)
+int advanced_binary_helper(int *array, int l, int r, int value)
 {
-	size_t i, m;
+	int i, m;
 
-	if (l > r)
+	if (l > r || l < 0)
 		return (-1);
 
 	printf("Searching in array:");
