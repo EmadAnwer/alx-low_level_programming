@@ -27,7 +27,7 @@ int advanced_binary_helper(int *array, int l, int r, int value)
 
 	m = (l + r) / 2;
 	if (array[m] == value)
-		if (array[m - 1] != value)
+		if (m == l || array[m - 1] != value)
 			return (m);
 		else
 			return (advanced_binary_helper(array, l, m, value));
